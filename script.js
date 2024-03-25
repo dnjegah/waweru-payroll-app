@@ -13,15 +13,20 @@ const collectEmployees = function() {
     employees.push({ firstName, lastName, salary})
     shouldAskQuestion = window.confirm('do you want to add another employee?')
   }
-  return employees;
+   return employees;
   // TODO: Get user input to create and return an array of employee objects
 }
 
 // Display the average salary
-const displayAverageSalary = function(employeesArray) {
-  const salaries = [employee["salary"] employee in employeesArray];
-  const average_salary = sum(salaries) / len(salaries);
-  console.log("The average salary is ${average_salary:.2f}");
+  const displayAverageSalary = function(employeesArray) {
+    let totalSalary = 0;
+    for (const employee of employees) {
+      totalSalary += employee.salary;
+    }
+    
+    const averageSalary = totalSalary / employees.length;
+    
+    console.log(`Average salary: ${averageSalary.toFixed(2)}`);
 
   // TODO: Calculate and display the average salary
 }
